@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="877.0" prefWidth="1168.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TranferAmountController">
+   <children>
+      <TextField layoutX="-1.0" layoutY="-6.0" prefHeight="883.0" prefWidth="148.0" style="-fx-background-color: #0000FF;" />
+      <TextField layoutY="-5.0" prefHeight="69.0" prefWidth="1168.0" style="-fx-background-color: #0000FF;" />
+      <Text fill="WHITE" layoutX="411.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFER AMOUNT">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="59.0" fitWidth="98.0" layoutX="21.0" layoutY="276.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/h1-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="98.0" layoutX="28.0" layoutY="376.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/a1-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="homeBtn" layoutX="44.0" layoutY="335.0" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: #0000FF;" text="Home" textFill="WHITE" />
+      <Button layoutX="16.0" layoutY="459.0" mnemonicParsing="false" style="-fx-background-color: #0000FF;" text="Transfer Amount" textFill="WHITE" />
+      <Text fill="#1f51ff" layoutX="180.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEY SHAHID!">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text layoutX="181.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Sky Bank">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField layoutX="180.0" layoutY="271.0" prefHeight="585.0" prefWidth="963.0" style="-fx-background-color: #0096FF;" />
+      <TextField layoutX="716.0" layoutY="84.0" prefHeight="155.0" prefWidth="426.0" style="-fx-background-color: #1F51FF;" />
+      <Text fill="WHITE" layoutX="867.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKY BANK">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="59.0" fitWidth="64.0" layoutX="794.0" layoutY="130.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/b4-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="fromaccount" layoutX="448.0" layoutY="513.0" prefHeight="31.0" prefWidth="319.0" />
+      <Text fill="WHITE" layoutX="448.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From Account Number" />
+      <Button layoutX="595.0" layoutY="720.0" mnemonicParsing="false" onAction="#Transfer" style="-fx-background-color: #0000FF;" text="Transfer " textFill="WHITE" />
+      <Text fill="WHITE" layoutX="442.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount " />
+      <Text fill="WHITE" layoutX="202.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKY PAY" />
+      <TextField fx:id="toaccount" layoutX="448.0" layoutY="587.0" prefHeight="31.0" prefWidth="319.0" />
+      <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="929.0" layoutY="664.0">
+         <image>
+            <Image url="file:/securepay2-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="173.0" fitWidth="200.0" layoutX="508.0" layoutY="286.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/securepay1-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="511.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SECURE PAYMENT">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="448.0" layoutY="647.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fill="WHITE" layoutX="442.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To  Account Number" />
+      <TextField fx:id="amount" layoutX="448.0" layoutY="658.0" prefHeight="31.0" prefWidth="319.0" />
+      <Text fx:id="successmsg" fill="#35940d" layoutX="802.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="294.5068474858999">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorText" fill="#f51111" layoutX="544.0" layoutY="780.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

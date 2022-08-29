@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="877.0" prefWidth="1168.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RequestLoamController">
+   <children>
+      <TextField layoutX="-1.0" layoutY="-6.0" prefHeight="883.0" prefWidth="148.0" style="-fx-background-color: #0000FF;" />
+      <TextField layoutY="-5.0" prefHeight="69.0" prefWidth="1168.0" style="-fx-background-color: #0000FF;" />
+      <Text fill="WHITE" layoutX="435.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REQUEST LOAN">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="59.0" fitWidth="87.0" layoutX="37.0" layoutY="421.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/l2-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="loanBtn" layoutX="47.0" layoutY="480.0" mnemonicParsing="false" onAction="#goToLoan" style="-fx-background-color: #0000FF;" text="Loan" textFill="WHITE" />
+      <Text fill="#1f51ff" layoutX="180.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEY SHAHID!">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text layoutX="181.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Sky Bank">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField layoutX="180.0" layoutY="272.0" prefHeight="585.0" prefWidth="963.0" style="-fx-background-color: #0096FF;" />
+      <TextField layoutX="716.0" layoutY="84.0" prefHeight="155.0" prefWidth="426.0" style="-fx-background-color: #1F51FF;" />
+      <Text fill="WHITE" layoutX="867.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKY BANK">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="59.0" fitWidth="64.0" layoutX="794.0" layoutY="130.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/b4-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="name" layoutX="275.0" layoutY="534.0" prefHeight="31.0" prefWidth="242.0" />
+      <Text fill="WHITE" layoutX="277.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name" />
+      <Button fx:id="request" layoutX="547.0" layoutY="731.0" mnemonicParsing="false" onAction="#RequestLoan" style="-fx-background-color: #0000FF;" text="Request" textFill="WHITE" />
+      <Text fill="WHITE" layoutX="620.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount of Loan " />
+      <Text fill="WHITE" layoutX="202.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKY PAY" />
+      <TextField fx:id="amount" layoutX="620.0" layoutY="534.0" prefHeight="31.0" prefWidth="242.0" />
+      <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="929.0" layoutY="664.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/securepay2-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="173.0" fitWidth="200.0" layoutX="508.0" layoutY="286.0">
+         <image>
+            <Image url="file:/F:/Ecilipse%20Workspace/LINKING/src/Images/securepay1-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="511.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SECURE PAYMENT">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <ButtonBar layoutX="845.0" layoutY="373.0" prefHeight="40.0" prefWidth="200.0" />
+      <Accordion layoutX="265.0" layoutY="388.0" />
+      <Text fill="WHITE" layoutX="278.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your income" />
+      <TextField fx:id="income" layoutX="276.0" layoutY="649.0" prefHeight="31.0" prefWidth="242.0" />
+      <TextField fx:id="loantype" layoutX="620.0" layoutY="650.0" prefHeight="31.0" prefWidth="242.0" />
+      <Text fill="WHITE" layoutX="620.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Loan Type" />
+      <Text fx:id="error" fill="#ff0c0c" layoutX="794.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="227.86963042616844">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="success" fill="#1b7904" layoutX="511.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="219.00000247359276">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
