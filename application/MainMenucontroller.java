@@ -6,17 +6,24 @@ import java.util.ResourceBundle;
 
 import javax.print.DocFlavor.URL;
 
+import businessLayer.Account;
+import businessLayer.BMS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainMenucontroller {
+	public Text accountNumberText;
+	public Text showUsername;
 	Main m=new Main();
 	@FXML
 	public Button Login,notification,homeBtn,transferAmountBtn,loanBtn,payTaxBtn,investBtn,insuranceBtn,checkBtn,paymentBtn, issuebtn;
-	
+	@FXML
+	private Text balanceText;
+
 	
 	 // The reference of show button will be injected by the FXML loader
 	 
@@ -27,6 +34,7 @@ public class MainMenucontroller {
      
 	 @FXML
 	 public ResourceBundle resources;
+	private Account currentAccount; // Add this field
 
 	// Add a public no-args constructor
 	 public MainMenucontroller()
@@ -35,8 +43,26 @@ public class MainMenucontroller {
 	 @FXML
 	 public void initialize()
 	 {
+		 //get the current account from the business layer
+		 currentAccount = BMS.getInstance().getAccount();
+		 updateInfo();
 	 }
-	 public void goToLogin(ActionEvent event) throws IOException  
+
+
+
+	private void updateInfo() {
+		System.out.println("Updating Info");
+		if (currentAccount != null) {
+			balanceText.setText("Your Balance: $" + currentAccount.getBalance());
+			accountNumberText.setText("Account Number: " + currentAccount.getAcc_number());
+			showUsername.setText("Hey " + currentAccount.getUsername() + "!");
+		} else {
+			balanceText.setText("Your Balance: N/A");
+		}
+	}
+
+
+	public void goToLogin(ActionEvent event) throws IOException
 	 {
 		
 		Stage s=(Stage)((Node)event.getSource()).getScene().getWindow();

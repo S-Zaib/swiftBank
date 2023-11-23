@@ -1,11 +1,14 @@
 package application;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -76,9 +79,13 @@ public class LoginController {
 				 Account  acc= BMS.getInstance().accountLogin(user, pass);
 				// System.out.println();
 					if(acc!=null) {
-						//BMS.getInstance().setCurrentUser(username.getText(), 1);
-						Stage s=(Stage)((Node)event.getSource()).getScene().getWindow();
-						m.changeScene(s,"src/MainMenu.fxml");
+						// Pass the Account object to MainMenucontroller
+						String path = "src/MainMenu.fxml";
+
+
+
+						Stage s = (Stage) ((Node) event.getSource()).getScene().getWindow();
+						m.changeScene(s, path);
 			            }
 					else {
 						  Alert alert1= new Alert(AlertType.ERROR);

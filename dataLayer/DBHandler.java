@@ -5,10 +5,12 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.ResultSet;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 import businessLayer.Account;
 import businessLayer.Bank;
@@ -20,11 +22,12 @@ public class DBHandler {
 		public void connectDB() {
 			try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+			con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","$Zaib524719");
 			if(con == null) {
 			System.out.println("DB connection failed");}
-			else
-			System.out.println("DB connection successful");
+			else {
+				System.out.println("DB connection successful");
+			}
 
 			}
 			catch(Exception e) {
@@ -34,6 +37,8 @@ public class DBHandler {
 		
 		
 		public ArrayList<Account> readAccountsRecord() {
+			//empty the arraylist
+			Bank.accounts.clear();
 			connectDB();
 			//ArrayList<Order> Orders= new ArrayList<Order>();
 			
@@ -45,7 +50,7 @@ public class DBHandler {
 				ResultSet rs= (ResultSet) stmt.executeQuery(sql);
 				while(rs.next()) {
 					
-					Bank.accounts.add(new Account(rs.getString(1), rs.getString(2),rs.getInt(3)));
+					Bank.accounts.add(new Account(rs.getString(1), rs.getString(2),rs.getString(3), rs.getInt(4)));
 					}
 				
 				con.close();

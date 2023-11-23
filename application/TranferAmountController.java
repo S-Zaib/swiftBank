@@ -66,7 +66,7 @@ public class TranferAmountController {
 	 int amnt=Integer.parseInt(am);
  boolean  flager= BMS.getInstance().TransferAmount(fromuser,touser,amnt);
  System.out.println(flager);
-	if(flager==true) {
+	if(flager) {
 		successmsg.setText("Successfully Transferred");
  
 	 }

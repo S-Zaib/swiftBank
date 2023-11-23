@@ -115,9 +115,15 @@ public class BMS {
 	     //  System.out.println("BL"+name);
 	     //  System.out.println("BL"+password);
 			 account3 =ac.accountLogin(name, password);
+			 //show account details
 
 			return account3;
 
+		}
+
+		//return current account
+		public Account getAccount() {
+			return account3;
 		}
 	
 	public boolean AcceptLoan(int loan) {

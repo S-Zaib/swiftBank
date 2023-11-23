@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
+import application.MainMenucontroller;
 import dataLayer.DBHandler;
 
 public class Account {
@@ -12,6 +13,8 @@ CreditCard card;
 String acc_type;
 int balance;
 String acc_number;
+
+String username;
 String password;
 public static ArrayList<Order>orders = new ArrayList<Order>();
 public static ArrayList<Investment>investments = new ArrayList<Investment>();
@@ -75,11 +78,12 @@ public Account(String acc_type, int balance) {
 	}
 }*/
 
-public Account(String acc_number, String password ,int balance) {
-	String save="SAV";
-	String curr="CUR";
-	Random ran = new Random();
-    Random r=new Random();
+public Account(String acc_number, String username, String password ,int balance) {
+//	String save="SAV";
+//	String curr="CUR";
+//	Random ran = new Random();
+//    Random r=new Random();
+	this.username=username;
 	this.password=password;
 	//this.acc_type = acc_type;
 	this.balance = balance;
@@ -128,7 +132,7 @@ boolean searchAccount(String accnum) {
 			
 			
 		}
-	}if(flag==false) {
+	}if(!flag) {
 		System.out.println("Verification failed");
 		
 	}return flag;
@@ -169,8 +173,8 @@ boolean TransferAmount(String fromacc,String toacc,int amount) {
 				
 		  }
 			
-		  System.out.println("Successfuly transferred");
-		//p.updateAcount(fromacc, toacc);  
+		  System.out.println("Successfully transferred");
+		//p.updateAcount(fromacc, toacc);
 	  } return transfer;
 	  
 	
@@ -181,17 +185,27 @@ public Account accountLogin(String user,String pass)
 {
 Account acc=new Account();
 Bank.accounts=p.readAccountsRecord();
+boolean flag=false;
+
+	if (Bank.accounts.isEmpty()) {
+		System.out.println("No accounts available. Login failed");
+		return null;  // No need to proceed if there are no accounts
+	}
 
 	for(Account a:Bank.accounts) {
-		if(user.equals(a.acc_number)&&pass.equals(a.password)) {
+		//print accounts
+		System.out.println("Username: "+a.username+"Password:"+a.password+"Entered Username: "+user+"Entered Pasword: "+pass);
+		if(user.equals(a.username)&&pass.equals(a.password)) {
 			System.out.println("Login successful");
-			//flag=true;
+			flag=true;
 			acc= a;
 			
 		}
-	}if(acc==null) {
+	}
+	if(!flag) {
 		System.out.println("Login failed");
-		
+		return null;
+
 	}return acc;
 }
 public void printList(ArrayList<Account> accounts){
@@ -200,9 +214,11 @@ public void printList(ArrayList<Account> accounts){
     }
 }
 
-	
-	
-	
+	public String getUsername() {
+	return username;
+	}
+
+
 //}
 /*public void printAccountsList(ArrayList<Account> accounts){
     for(Account a : accounts){
